@@ -1,0 +1,753 @@
+
+*************** JDFTx 1.7.0 (git hash 80df9f08) ***************
+
+Start date and time: Fri Feb  9 14:26:35 2024
+Executable /global/cfs/cdirs/m4025/Software/Perlmutter/JDFTx/build-gpu/jdftx_gpu with command-line: -i bandstruct.in -o bandstruct.out
+Running on hosts (process indices):  nid003429 (0-3)  nid003432 (4-7)  nid003433 (8-11)  nid003436 (12-15)  nid003437 (16-19)  nid003440 (20-23)  nid003441 (24-27)  nid003444 (28-31)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)  4 (4)  5 (5)  6 (6)  7 (7)  8 (8)  9 (9)  10 (10)  11 (11)  12 (12)  13 (13)  14 (14)  15 (15)  16 (16)  17 (17)  18 (18)  19 (19)  20 (20)  21 (21)  22 (22)  23 (23)  24 (24)  25 (25)  26 (26)  27 (27)  28 (28)  29 (29)  30 (30)  31 (31)
+gpuInit: Found compatible cuda device 0 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 1 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 2 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 3 'NVIDIA A100-SXM4-40GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.62
+Run totals: 32 processes, 512 threads, 32 GPUs
+Memory pool size: 8192 MB (per process)
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+dump End BandEigs
+dump-name bandstruct.$VAR
+elec-cutoff 45 275
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBEsol
+elec-n-bands 100
+elec-smearing Fermi 0.00095
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+exchange-regularization WignerSeitzTruncated
+fix-electron-density opt/totalE.$VAR
+fluid None
+fluid-ex-corr (null) lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion Ge   0.666188153467864   0.332376295685728   0.750000000000000 0
+ion Ge   0.333811861532136   0.667623711814271   0.250000000000000 0
+ion Mn   0.163167248408767   0.326334485567535   0.750000000000000 0
+ion Mn   0.836832766591233   0.673665521932465   0.250000000000000 0
+ion Mn   0.672399867871757   0.835648842386969   0.750000000000000 0
+ion Mn   0.327600147128243   0.164351165113032   0.250000000000000 0
+ion Mn   0.163248985765211   0.835648842386969   0.750000000000000 0
+ion Mn   0.836751029234789   0.164351165113032   0.250000000000000 0
+ion-species GBRV/$ID_pbesol.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.050000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.100000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.150000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.200000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.250000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.300000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.350000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.400000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.450000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.500000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.479166666663   0.041666666662   0.000000000000  0.01492537313433
+kpoint   0.458333333325   0.083333333325   0.000000000000  0.01492537313433
+kpoint   0.437499999987   0.124999999987   0.000000000000  0.01492537313433
+kpoint   0.416666666650   0.166666666650   0.000000000000  0.01492537313433
+kpoint   0.395833333312   0.208333333312   0.000000000000  0.01492537313433
+kpoint   0.374999999975   0.249999999975   0.000000000000  0.01492537313433
+kpoint   0.354166666637   0.291666666637   0.000000000000  0.01492537313433
+kpoint   0.333333333300   0.333333333300   0.000000000000  0.01492537313433
+kpoint   0.299999999970   0.299999999970   0.000000000000  0.01492537313433
+kpoint   0.266666666640   0.266666666640   0.000000000000  0.01492537313433
+kpoint   0.233333333310   0.233333333310   0.000000000000  0.01492537313433
+kpoint   0.199999999980   0.199999999980   0.000000000000  0.01492537313433
+kpoint   0.166666666650   0.166666666650   0.000000000000  0.01492537313433
+kpoint   0.133333333320   0.133333333320   0.000000000000  0.01492537313433
+kpoint   0.099999999990   0.099999999990   0.000000000000  0.01492537313433
+kpoint   0.066666666660   0.066666666660   0.000000000000  0.01492537313433
+kpoint   0.033333333330   0.033333333330   0.000000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.050000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.100000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.150000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.200000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.250000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.300000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.350000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.400000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.450000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.050000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.100000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.150000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.200000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.250000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.300000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.350000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.400000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.450000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.500000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.479166666663   0.041666666662   0.500000000000  0.01492537313433
+kpoint   0.458333333325   0.083333333325   0.500000000000  0.01492537313433
+kpoint   0.437499999987   0.124999999987   0.500000000000  0.01492537313433
+kpoint   0.416666666650   0.166666666650   0.500000000000  0.01492537313433
+kpoint   0.395833333312   0.208333333312   0.500000000000  0.01492537313433
+kpoint   0.374999999975   0.249999999975   0.500000000000  0.01492537313433
+kpoint   0.354166666637   0.291666666637   0.500000000000  0.01492537313433
+kpoint   0.333333333300   0.333333333300   0.500000000000  0.01492537313433
+kpoint   0.299999999970   0.299999999970   0.500000000000  0.01492537313433
+kpoint   0.266666666640   0.266666666640   0.500000000000  0.01492537313433
+kpoint   0.233333333310   0.233333333310   0.500000000000  0.01492537313433
+kpoint   0.199999999980   0.199999999980   0.500000000000  0.01492537313433
+kpoint   0.166666666650   0.166666666650   0.500000000000  0.01492537313433
+kpoint   0.133333333320   0.133333333320   0.500000000000  0.01492537313433
+kpoint   0.099999999990   0.099999999990   0.500000000000  0.01492537313433
+kpoint   0.066666666660   0.066666666660   0.500000000000  0.01492537313433
+kpoint   0.033333333330   0.033333333330   0.500000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice  \
+	   9.481164570535427   -4.740582285267713    0.000000000000000  \
+	   0.000000000000000    8.238772884283971    0.000000000000000  \
+	   0.000000000000000    0.000000000000000    7.676982525825886 
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.00095
+pcm-variant GLSSA13
+perturb-minimize  \
+	nIterations            0 \
+	algorithm              MINRES \
+	residualTol            0.0001 \
+	residualDiffThreshold  0.0001 \
+	CGBypass               no \
+	recomputeResidual      no
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries none
+symmetry-threshold 0.0001
+
+
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  72  72  60  ]
+Chosen fftbox size, S = [  72  72  60  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  60  60  48  ]
+Chosen fftbox size, S = [  60  60  48  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBEsol GGA exchange.
+Initalized PBEsol GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/ge_pbesol.uspp':
+  Title: Ge.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -106.415071.  14 valence electrons in orbitals:
+    |320>  occupation: 10  eigenvalue: -1.077226
+    |400>  occupation: 2  eigenvalue: -0.431563
+    |410>  occupation: 2  eigenvalue: -0.143219
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 621 points:
+    l: 0  eig: -0.431563  rCut: 1.9
+    l: 0  eig: 1.000000  rCut: 1.9
+    l: 1  eig: -0.143219  rCut: 1.9
+    l: 1  eig: 1.000000  rCut: 1.9
+    l: 2  eig: -1.077226  rCut: 1.7
+    l: 2  eig: 0.000000  rCut: 1.7
+  Partial core density with radius 0.8
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/mn_pbesol.uspp':
+  Title: Mn.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -105.045521.  15 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -3.291699
+    |310>  occupation: 6  eigenvalue: -2.146878
+    |400>  occupation: 1.5  eigenvalue: -0.308679
+    |320>  occupation: 5  eigenvalue: -0.392872
+    |410>  occupation: 0  eigenvalue: -0.151407
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 585 points:
+    l: 0  eig: -3.291699  rCut: 1.45
+    l: 0  eig: -0.308679  rCut: 1.45
+    l: 1  eig: -2.146878  rCut: 1.45
+    l: 1  eig: -0.151407  rCut: 1.45
+    l: 2  eig: -0.392872  rCut: 1.7
+    l: 2  eig: 0.500000  rCut: 1.7
+  Partial core density with radius 0.65
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 1.70 bohrs.
+
+Initialized 2 species with 8 total atoms.
+
+Folded 67 k-points by 1x1x1 to 67 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons: 118.000000   nBands: 100   nStates: 67
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 8645.970 , ideal nbasis = 8646.245
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 2.378848 bohr.
+Real space sum over 729 unit cells with max indices [  4  4  4  ]
+Reciprocal space sum over 3757 terms with max indices [  8  8  6  ]
+
+---------- Allocating electronic variables ----------
+Reading n from file 'opt/totalE.n' ... Could not open 'opt/totalE.n' for reading.
+End date and time: Fri Feb  9 14:26:41 2024  (Duration: 0-0:00:06.22)
+Failed.
+
+PROFILER:            ExCorrCommunication     0.050476 +/-     0.050132 s,    2 calls,      0.100952 s total
+PROFILER:               ExCorrFunctional     0.001551 +/-     0.000000 s,    1 calls,      0.001551 s total
+PROFILER:                    ExCorrTotal     0.106116 +/-     0.000000 s,    1 calls,      0.106116 s total
+PROFILER:                    matrix::set     0.000039 +/-     0.000212 s,   48 calls,      0.001885 s total
+PROFILER:     RadialFunctionR::transform     0.005012 +/-     0.028950 s,  100 calls,      0.501233 s total
+PROFILER:                    reduceKmesh     0.000003 +/-     0.000000 s,    1 calls,      0.000003 s total
+
+MEMUSAGE:                    IndexArrays     0.008632 GB
+MEMUSAGE:                         matrix     0.001382 GB
+MEMUSAGE:                           misc     0.000115 GB
+MEMUSAGE:                    ScalarField     0.009270 GB
+MEMUSAGE:               ScalarFieldTilde     0.009579 GB
+MEMUSAGE:                          Total     0.026583 GB
+
+*************** JDFTx 1.7.0 (git hash 80df9f08) ***************
+
+Start date and time: Fri Feb  9 14:58:00 2024
+Executable /global/cfs/cdirs/m4025/Software/Perlmutter/JDFTx/build-gpu/jdftx_gpu with command-line: -i bandstruct.in -o bandstruct.out
+Running on hosts (process indices):  nid002089 (0-3)  nid002092 (4-7)  nid002093 (8-11)  nid002808 (12-15)  nid002809 (16-19)  nid002812 (20-23)  nid002813 (24-27)  nid002816 (28-31)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)  4 (4)  5 (5)  6 (6)  7 (7)  8 (8)  9 (9)  10 (10)  11 (11)  12 (12)  13 (13)  14 (14)  15 (15)  16 (16)  17 (17)  18 (18)  19 (19)  20 (20)  21 (21)  22 (22)  23 (23)  24 (24)  25 (25)  26 (26)  27 (27)  28 (28)  29 (29)  30 (30)  31 (31)
+gpuInit: Found compatible cuda device 0 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 1 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 2 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 3 'NVIDIA A100-SXM4-40GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.62
+Run totals: 32 processes, 512 threads, 32 GPUs
+Memory pool size: 8192 MB (per process)
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+dump End BandEigs
+dump-name bandstruct.$VAR
+elec-cutoff 45 275
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBEsol
+elec-n-bands 100
+elec-smearing Fermi 0.00095
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+exchange-regularization WignerSeitzTruncated
+fix-electron-density totalE.$VAR
+fluid None
+fluid-ex-corr (null) lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion Ge   0.666188153467864   0.332376295685728   0.750000000000000 0
+ion Ge   0.333811861532136   0.667623711814271   0.250000000000000 0
+ion Mn   0.163167248408767   0.326334485567535   0.750000000000000 0
+ion Mn   0.836832766591233   0.673665521932465   0.250000000000000 0
+ion Mn   0.672399867871757   0.835648842386969   0.750000000000000 0
+ion Mn   0.327600147128243   0.164351165113032   0.250000000000000 0
+ion Mn   0.163248985765211   0.835648842386969   0.750000000000000 0
+ion Mn   0.836751029234789   0.164351165113032   0.250000000000000 0
+ion-species GBRV/$ID_pbesol.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.050000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.100000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.150000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.200000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.250000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.300000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.350000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.400000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.450000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.500000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.479166666663   0.041666666662   0.000000000000  0.01492537313433
+kpoint   0.458333333325   0.083333333325   0.000000000000  0.01492537313433
+kpoint   0.437499999987   0.124999999987   0.000000000000  0.01492537313433
+kpoint   0.416666666650   0.166666666650   0.000000000000  0.01492537313433
+kpoint   0.395833333312   0.208333333312   0.000000000000  0.01492537313433
+kpoint   0.374999999975   0.249999999975   0.000000000000  0.01492537313433
+kpoint   0.354166666637   0.291666666637   0.000000000000  0.01492537313433
+kpoint   0.333333333300   0.333333333300   0.000000000000  0.01492537313433
+kpoint   0.299999999970   0.299999999970   0.000000000000  0.01492537313433
+kpoint   0.266666666640   0.266666666640   0.000000000000  0.01492537313433
+kpoint   0.233333333310   0.233333333310   0.000000000000  0.01492537313433
+kpoint   0.199999999980   0.199999999980   0.000000000000  0.01492537313433
+kpoint   0.166666666650   0.166666666650   0.000000000000  0.01492537313433
+kpoint   0.133333333320   0.133333333320   0.000000000000  0.01492537313433
+kpoint   0.099999999990   0.099999999990   0.000000000000  0.01492537313433
+kpoint   0.066666666660   0.066666666660   0.000000000000  0.01492537313433
+kpoint   0.033333333330   0.033333333330   0.000000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.000000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.050000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.100000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.150000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.200000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.250000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.300000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.350000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.400000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.450000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.050000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.100000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.150000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.200000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.250000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.300000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.350000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.400000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.450000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.500000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint   0.479166666663   0.041666666662   0.500000000000  0.01492537313433
+kpoint   0.458333333325   0.083333333325   0.500000000000  0.01492537313433
+kpoint   0.437499999987   0.124999999987   0.500000000000  0.01492537313433
+kpoint   0.416666666650   0.166666666650   0.500000000000  0.01492537313433
+kpoint   0.395833333312   0.208333333312   0.500000000000  0.01492537313433
+kpoint   0.374999999975   0.249999999975   0.500000000000  0.01492537313433
+kpoint   0.354166666637   0.291666666637   0.500000000000  0.01492537313433
+kpoint   0.333333333300   0.333333333300   0.500000000000  0.01492537313433
+kpoint   0.299999999970   0.299999999970   0.500000000000  0.01492537313433
+kpoint   0.266666666640   0.266666666640   0.500000000000  0.01492537313433
+kpoint   0.233333333310   0.233333333310   0.500000000000  0.01492537313433
+kpoint   0.199999999980   0.199999999980   0.500000000000  0.01492537313433
+kpoint   0.166666666650   0.166666666650   0.500000000000  0.01492537313433
+kpoint   0.133333333320   0.133333333320   0.500000000000  0.01492537313433
+kpoint   0.099999999990   0.099999999990   0.500000000000  0.01492537313433
+kpoint   0.066666666660   0.066666666660   0.500000000000  0.01492537313433
+kpoint   0.033333333330   0.033333333330   0.500000000000  0.01492537313433
+kpoint   0.000000000000   0.000000000000   0.500000000000  0.01492537313433
+kpoint-folding 1 1 1 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice  \
+	   9.481164570535427   -4.740582285267713    0.000000000000000  \
+	   0.000000000000000    8.238772884283971    0.000000000000000  \
+	   0.000000000000000    0.000000000000000    7.676982525825886 
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.00095
+pcm-variant GLSSA13
+perturb-minimize  \
+	nIterations            0 \
+	algorithm              MINRES \
+	residualTol            0.0001 \
+	residualDiffThreshold  0.0001 \
+	CGBypass               no \
+	recomputeResidual      no
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries none
+symmetry-threshold 0.0001
+
+
+Applied RMS atom displacement 0 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  72  72  60  ]
+Chosen fftbox size, S = [  72  72  60  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  60  60  48  ]
+Chosen fftbox size, S = [  60  60  48  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBEsol GGA exchange.
+Initalized PBEsol GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/ge_pbesol.uspp':
+  Title: Ge.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -106.415071.  14 valence electrons in orbitals:
+    |320>  occupation: 10  eigenvalue: -1.077226
+    |400>  occupation: 2  eigenvalue: -0.431563
+    |410>  occupation: 2  eigenvalue: -0.143219
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 621 points:
+    l: 0  eig: -0.431563  rCut: 1.9
+    l: 0  eig: 1.000000  rCut: 1.9
+    l: 1  eig: -0.143219  rCut: 1.9
+    l: 1  eig: 1.000000  rCut: 1.9
+    l: 2  eig: -1.077226  rCut: 1.7
+    l: 2  eig: 0.000000  rCut: 1.7
+  Partial core density with radius 0.8
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/mn_pbesol.uspp':
+  Title: Mn.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -105.045521.  15 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -3.291699
+    |310>  occupation: 6  eigenvalue: -2.146878
+    |400>  occupation: 1.5  eigenvalue: -0.308679
+    |320>  occupation: 5  eigenvalue: -0.392872
+    |410>  occupation: 0  eigenvalue: -0.151407
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 585 points:
+    l: 0  eig: -3.291699  rCut: 1.45
+    l: 0  eig: -0.308679  rCut: 1.45
+    l: 1  eig: -2.146878  rCut: 1.45
+    l: 1  eig: -0.151407  rCut: 1.45
+    l: 2  eig: -0.392872  rCut: 1.7
+    l: 2  eig: 0.500000  rCut: 1.7
+  Partial core density with radius 0.65
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 1.70 bohrs.
+
+Initialized 2 species with 8 total atoms.
+
+Folded 67 k-points by 1x1x1 to 67 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+No reducable k-points. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons: 118.000000   nBands: 100   nStates: 67
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 8645.970 , ideal nbasis = 8646.245
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 2.378848 bohr.
+Real space sum over 729 unit cells with max indices [  4  4  4  ]
+Reciprocal space sum over 3757 terms with max indices [  8  8  6  ]
+
+---------- Allocating electronic variables ----------
+Reading n from file 'totalE.n' ... done
+Initializing wave functions:  linear combination of atomic orbitals
+Note: number of bands (100) exceeds available atomic orbitals (96)
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBEsol exchange-correlation functional:
+      J.P. Perdew et al., Phys. Rev. Lett. 100, 136406 (2008)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Total energy minimization with Auxiliary Hamiltonian:
+      C. Freysoldt, S. Boeck, and J. Neugebauer, Phys. Rev. B 79, 241103(R) (2009)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:      6.90
+
+
+----------- Band structure minimization -------------
+Minimization will be done independently for each quantum number.
+
+---- Minimization of quantum number:     0  [ +0.0000000 +0.0000000 +0.0000000 ]  0.029850746 ----
+BandDavidson: Iter:   0  Eband: +0.897139456129020
+BandDavidson: Iter:   1  Eband: +0.818002724923550  dEband: -7.913673e-02  t[s]:      7.01
+BandDavidson: Iter:   2  Eband: +0.807388753386423  dEband: -1.061397e-02  t[s]:      7.04
+BandDavidson: Iter:   3  Eband: +0.804358027011347  dEband: -3.030726e-03  t[s]:      7.07
+BandDavidson: Iter:   4  Eband: +0.803650883696666  dEband: -7.071433e-04  t[s]:      7.10
+BandDavidson: Iter:   5  Eband: +0.803271127524047  dEband: -3.797562e-04  t[s]:      7.12
+BandDavidson: Iter:   6  Eband: +0.803149154793092  dEband: -1.219727e-04  t[s]:      7.15
+BandDavidson: Iter:   7  Eband: +0.803110850238639  dEband: -3.830455e-05  t[s]:      7.18
+BandDavidson: Iter:   8  Eband: +0.803097995551578  dEband: -1.285469e-05  t[s]:      7.20
+BandDavidson: Iter:   9  Eband: +0.803093874853148  dEband: -4.120698e-06  t[s]:      7.22
+BandDavidson: Iter:  10  Eband: +0.803092679176112  dEband: -1.195677e-06  t[s]:      7.24
+BandDavidson: Iter:  11  Eband: +0.803092307334622  dEband: -3.718415e-07  t[s]:      7.26
+BandDavidson: Iter:  12  Eband: +0.803092171312399  dEband: -1.360222e-07  t[s]:      7.28
+BandDavidson: Iter:  13  Eband: +0.803092115705142  dEband: -5.560726e-08  t[s]:      7.29
+BandDavidson: Iter:  14  Eband: +0.803092093337657  dEband: -2.236748e-08  t[s]:      7.32
+BandDavidson: Iter:  15  Eband: +0.803092084199595  dEband: -9.138062e-09  t[s]:      7.33
+BandDavidson: Converged (dEband<1.000000e-08)
+
+---- Minimization of quantum number:     1  [ +0.0500000 +0.0000000 +0.0000000 ]  0.029850746 ----
+BandDavidson: Iter:   0  Eband: +0.897417868685379
+BandDavidson: Iter:   1  Eband: +0.816368632495917  dEband: -8.104924e-02  t[s]:      7.37
+BandDavidson: Iter:   2  Eband: +0.806084813232142  dEband: -1.028382e-02  t[s]:      7.40
+BandDavidson: Iter:   3  Eband: +0.803848518394576  dEband: -2.236295e-03  t[s]:      7.43
+BandDavidson: Iter:   4  Eband: +0.803292061367686  dEband: -5.564570e-04  t[s]:      7.45
+BandDavidson: Iter:   5  Eband: +0.802922576551887  dEband: -3.694848e-04  t[s]:      7.48
+BandDavidson: Iter:   6  Eband: +0.802791146864894  dEband: -1.314297e-04  t[s]:      7.51
+BandDavidson: Iter:   7  Eband: +0.802745086750542  dEband: -4.606011e-05  t[s]:      7.54
+BandDavidson: Iter:   8  Eband: +0.802728909698756  dEband: -1.617705e-05  t[s]:      7.56
+BandDavidson: Iter:   9  Eband: +0.802723287584851  dEband: -5.622114e-06  t[s]:      7.58
+BandDavidson: Iter:  10  Eband: +0.802721220365352  dEband: -2.067219e-06  t[s]:      7.60
+BandDavidson: Iter:  11  Eband: +0.802720400328426  dEband: -8.200369e-07  t[s]:      7.61
+BandDavidson: Iter:  12  Eband: +0.802720036011880  dEband: -3.643165e-07  t[s]:      7.63
+BandDavidson: Iter:  13  Eband: +0.802719867140658  dEband: -1.688712e-07  t[s]:      7.65
+BandDavidson: Iter:  14  Eband: +0.802719787501833  dEband: -7.963882e-08  t[s]:      7.67
+BandDavidson: Iter:  15  Eband: +0.802719749374958  dEband: -3.812688e-08  t[s]:      7.68
+BandDavidson: Iter:  16  Eband: +0.802719731164051  dEband: -1.821091e-08  t[s]:      7.70
+BandDavidson: Iter:  17  Eband: +0.802719722244211  dEband: -8.919840e-09  t[s]:      7.72
+BandDavidson: Converged (dEband<1.000000e-08)
+	FillingsUpdate:  mu: +0.727161963  nElectrons: 118.000000
+
+Dumping 'bandstruct.eigenvals' ... done
+End date and time: Fri Feb  9 14:58:08 2024  (Duration: 0-0:00:08.34)
+Done!
+
+PROFILER:         augmentDensityGridGrad     0.015006 +/-     0.007381 s,    4 calls,      0.060026 s total
+PROFILER:    augmentDensitySphericalGrad     0.000385 +/-     0.000175 s,   72 calls,      0.027735 s total
+PROFILER:                 augmentOverlap     0.000689 +/-     0.004208 s,  136 calls,      0.093685 s total
+PROFILER:                     changeGrid     0.000022 +/-     0.000003 s,   36 calls,      0.000804 s total
+PROFILER:        ColumnBundle::randomize     0.002276 +/-     0.000039 s,    2 calls,      0.004552 s total
+PROFILER:              EdensityAndVscloc     0.019324 +/-     0.007935 s,    2 calls,      0.038648 s total
+PROFILER:                     EnlAndGrad     0.000720 +/-     0.000346 s,   72 calls,      0.051842 s total
+PROFILER:            ExCorrCommunication     0.018946 +/-     0.035807 s,    8 calls,      0.151572 s total
+PROFILER:               ExCorrFunctional     0.000538 +/-     0.000712 s,    3 calls,      0.001613 s total
+PROFILER:                    ExCorrTotal     0.052061 +/-     0.047266 s,    3 calls,      0.156182 s total
+PROFILER:                   Idag_DiagV_I     0.004242 +/-     0.002493 s,   36 calls,      0.152699 s total
+PROFILER:            matrix::diagonalize     0.006324 +/-     0.015347 s,   36 calls,      0.227668 s total
+PROFILER:                    matrix::set     0.000022 +/-     0.000285 s,  880 calls,      0.019207 s total
+PROFILER:            orthoMatrix(matrix)     0.002277 +/-     0.010271 s,   36 calls,      0.081973 s total
+PROFILER:     RadialFunctionR::transform     0.005529 +/-     0.025196 s,  100 calls,      0.552855 s total
+PROFILER:                    reduceKmesh     0.000003 +/-     0.000000 s,    1 calls,      0.000003 s total
+PROFILER:                            Y*M     0.000062 +/-     0.000023 s,  350 calls,      0.021750 s total
+PROFILER:                          Y1^Y2     0.000241 +/-     0.002946 s,  278 calls,      0.066983 s total
+
+MEMUSAGE:                   ColumnBundle     0.099423 GB
+MEMUSAGE:        complexScalarFieldTilde     0.002575 GB
+MEMUSAGE:                    IndexArrays     0.008632 GB
+MEMUSAGE:                         matrix     0.010215 GB
+MEMUSAGE:                           misc     0.001807 GB
+MEMUSAGE:                    ScalarField     0.020857 GB
+MEMUSAGE:               ScalarFieldTilde     0.016763 GB
+MEMUSAGE:                          Total     0.126569 GB

@@ -1,0 +1,667 @@
+
+*************** JDFTx 1.7.0 (git hash 80df9f08) ***************
+
+Start date and time: Thu Feb 15 14:59:03 2024
+Executable /global/cfs/cdirs/m4025/Software/Perlmutter/JDFTx/build-gpu/jdftx_gpu with command-line: -i totalE.in -o totalE.out
+Running on hosts (process indices):  nid001420 (0-3)  nid001849 (4-7)  nid002057 (8-11)  nid002060 (12-15)  nid002181 (16-19)  nid002876 (20-23)  nid002888 (24-27)  nid003008 (28-31)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)  4 (4)  5 (5)  6 (6)  7 (7)  8 (8)  9 (9)  10 (10)  11 (11)  12 (12)  13 (13)  14 (14)  15 (15)  16 (16)  17 (17)  18 (18)  19 (19)  20 (20)  21 (21)  22 (22)  23 (23)  24 (24)  25 (25)  26 (26)  27 (27)  28 (28)  29 (29)  30 (30)  31 (31)
+gpuInit: Found compatible cuda device 0 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 1 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 2 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 3 'NVIDIA A100-SXM4-40GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.63
+Run totals: 32 processes, 1024 threads, 32 GPUs
+Memory pool size: 8192 MB (per process)
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+converge-empty-states yes
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+density-of-states Etol 1.000000e-06 Esigma 0.000000e+00 \
+		Complete \
+	Total
+dump End State ElecDensity BandEigs EigStats DOS Symmetries Kpoints
+dump 
+dump-name totalE.$VAR
+elec-cutoff 45 275
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBEsol
+elec-n-bands 100
+elec-smearing Fermi 0.00095
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr (null) lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion Ge   0.666188153467864   0.332376295685728   0.750000000000000 0
+ion Ge   0.333811861532136   0.667623711814271   0.250000000000000 0
+ion Mn   0.163167248408767   0.326334485567535   0.750000000000000 0
+ion Mn   0.836832766591233   0.673665521932465   0.250000000000000 0
+ion Mn   0.672399867871757   0.835648842386969   0.750000000000000 0
+ion Mn   0.327600147128243   0.164351165113032   0.250000000000000 0
+ion Mn   0.163248985765211   0.835648842386969   0.750000000000000 0
+ion Mn   0.836751029234789   0.164351165113032   0.250000000000000 0
+ion-species GBRV/$ID_pbesol.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 4 4 4 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice  \
+	   9.481164570535427   -4.740582285267713    0.000000000000000  \
+	   0.000000000000000    8.238772884283971    0.000000000000000  \
+	   0.000000000000000    0.000000000000000    7.676982525825886 
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.00095
+pcm-variant GLSSA13
+perturb-minimize  \
+	nIterations            0 \
+	algorithm              MINRES \
+	residualTol            0.0001 \
+	residualDiffThreshold  0.0001 \
+	CGBypass               no \
+	recomputeResidual      no
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+
+
+
+---------- Setting up symmetries ----------
+
+Found 8 point-group symmetries of the bravais lattice
+Found 8 space-group symmetries with basis
+Applied RMS atom displacement 4.82206e-15 bohrs to make symmetries exact.
+
+---------- Initializing the Grid ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  72  72  60  ]
+Chosen fftbox size, S = [  72  72  60  ]
+
+---------- Initializing tighter grid for wavefunction operations ----------
+R = 
+[      9.48116     -4.74058            0  ]
+[            0      8.23877            0  ]
+[            0            0      7.67698  ]
+unit cell volume = 599.673
+G =
+[   0.662702   0.381318         -0  ]
+[          0   0.762636          0  ]
+[          0         -0   0.818445  ]
+Minimum fftbox size, Smin = [  60  60  48  ]
+Chosen fftbox size, S = [  60  60  48  ]
+
+---------- Exchange Correlation functional ----------
+Initalized PBEsol GGA exchange.
+Initalized PBEsol GGA correlation.
+
+---------- Setting up pseudopotentials ----------
+Width of ionic core gaussian charges (only for fluid interactions / plotting) set to 0
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/ge_pbesol.uspp':
+  Title: Ge.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -106.415071.  14 valence electrons in orbitals:
+    |320>  occupation: 10  eigenvalue: -1.077226
+    |400>  occupation: 2  eigenvalue: -0.431563
+    |410>  occupation: 2  eigenvalue: -0.143219
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 621 points:
+    l: 0  eig: -0.431563  rCut: 1.9
+    l: 0  eig: 1.000000  rCut: 1.9
+    l: 1  eig: -0.143219  rCut: 1.9
+    l: 1  eig: 1.000000  rCut: 1.9
+    l: 2  eig: -1.077226  rCut: 1.7
+    l: 2  eig: 0.000000  rCut: 1.7
+  Partial core density with radius 0.8
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 2.00 bohrs.
+
+Reading pseudopotential file '/global/u2/r/ravish/Project-BEAST/Software/Perlmutter/JDFTx/build-gpu/pseudopotentials/GBRV/mn_pbesol.uspp':
+  Title: Mn.  Created by USPP 7.3.6 on 22-9-15
+  Reference state energy: -105.045521.  15 valence electrons in orbitals:
+    |300>  occupation: 2  eigenvalue: -3.291699
+    |310>  occupation: 6  eigenvalue: -2.146878
+    |400>  occupation: 1.5  eigenvalue: -0.308679
+    |320>  occupation: 5  eigenvalue: -0.392872
+    |410>  occupation: 0  eigenvalue: -0.151407
+  lMax: 2  lLocal: 3  QijEcut: 6
+  6 projectors sampled on a log grid with 585 points:
+    l: 0  eig: -3.291699  rCut: 1.45
+    l: 0  eig: -0.308679  rCut: 1.45
+    l: 1  eig: -2.146878  rCut: 1.45
+    l: 1  eig: -0.151407  rCut: 1.45
+    l: 2  eig: -0.392872  rCut: 1.7
+    l: 2  eig: 0.500000  rCut: 1.7
+  Partial core density with radius 0.65
+  Transforming core density to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming local potential to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming nonlocal projectors to a uniform radial grid of dG=0.02 with 646 points.
+  Transforming density augmentations to a uniform radial grid of dG=0.02 with 2683 points.
+  Transforming atomic orbitals to a uniform radial grid of dG=0.02 with 646 points.
+  Core radius for overlap checks: 1.70 bohrs.
+
+Initialized 2 species with 8 total atoms.
+
+Folded 1 k-points by 4x4x4 to 64 k-points.
+
+---------- Setting up k-points, bands, fillings ----------
+Reduced to 21 k-points under symmetry. 
+Computing the number of bands and number of electrons
+Calculating initial fillings.
+nElectrons: 118.000000   nBands: 100   nStates: 21
+
+----- Setting up reduced wavefunction bases (one per k-point) -----
+average nbasis = 8646.922 , ideal nbasis = 8646.245
+
+----- Initializing Supercell corresponding to k-point mesh -----
+Lattice vector linear combinations in supercell:
+[   4   0   0  ]
+[   0   4   0  ]
+[   0   0   4  ]
+Supercell lattice vectors:
+[  37.9247  -18.9623  0  ]
+[  0  32.9551  0  ]
+[  0  0  30.7079  ]
+
+---------- Setting up ewald sum ----------
+Optimum gaussian width for ewald sums = 2.378848 bohr.
+Real space sum over 729 unit cells with max indices [  4  4  4  ]
+Reciprocal space sum over 3757 terms with max indices [  8  8  6  ]
+
+---------- Allocating electronic variables ----------
+Initializing wave functions:  linear combination of atomic orbitals
+Note: number of bands (100) exceeds available atomic orbitals (96)
+Ge pseudo-atom occupations:   s ( 2 )  p ( 2 )  d ( 10 )
+Mn pseudo-atom occupations:   s ( 2 0 )  p ( 6 0 )  d ( 7 )
+	FillingsUpdate:  mu: +0.621636894  nElectrons: 118.000000
+LCAOMinimize: Iter:   0  F: -797.4687491416863168  |grad|_K:  1.979e-02  alpha:  1.000e+00
+	FillingsUpdate:  mu: +0.318606147  nElectrons: 118.000000
+LCAOMinimize: Iter:   1  F: -811.0483586546424704  |grad|_K:  1.223e-02  alpha:  1.658e-01  linmin: -9.997e-02  cgtest:  7.541e-01  t[s]:      8.83
+LCAOMinimize: Encountered beta<0, resetting CG.
+	FillingsUpdate:  mu: +0.643867015  nElectrons: 118.000000
+LCAOMinimize: Iter:   2  F: -815.0396447316240938  |grad|_K:  2.834e-03  alpha:  2.346e-01  linmin: -1.451e-01  cgtest:  8.418e-01  t[s]:      9.58
+LCAOMinimize: Encountered beta<0, resetting CG.
+	FillingsUpdate:  mu: +0.702992862  nElectrons: 118.000000
+LCAOMinimize: Iter:   3  F: -815.1522278824816112  |grad|_K:  3.691e-03  alpha:  1.276e-01  linmin: -1.702e-03  cgtest:  3.267e-02  t[s]:     10.33
+	FillingsUpdate:  mu: +0.757564033  nElectrons: 118.000000
+LCAOMinimize: Iter:   4  F: -815.2860005089323749  |grad|_K:  6.498e-04  alpha:  8.943e-02  linmin:  5.644e-03  cgtest: -2.538e-01  t[s]:     11.08
+	FillingsUpdate:  mu: +0.763767614  nElectrons: 118.000000
+LCAOMinimize: Iter:   5  F: -815.2959243727194689  |grad|_K:  8.486e-04  alpha:  2.298e-01  linmin:  8.453e-04  cgtest:  1.726e-02  t[s]:     11.85
+	FillingsUpdate:  mu: +0.762236596  nElectrons: 118.000000
+LCAOMinimize: Iter:   6  F: -815.2999459044029891  |grad|_K:  3.329e-04  alpha:  5.280e-02  linmin: -3.480e-03  cgtest:  1.087e-01  t[s]:     12.66
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.583944e-01.
+	FillingsUpdate:  mu: +0.753014555  nElectrons: 118.000000
+LCAOMinimize: Iter:   7  F: -815.3024464241343594  |grad|_K:  2.546e-04  alpha:  2.116e-01  linmin: -7.061e-05  cgtest: -3.127e-02  t[s]:     13.83
+	FillingsUpdate:  mu: +0.750956298  nElectrons: 118.000000
+LCAOMinimize: Iter:   8  F: -815.3027514425724576  |grad|_K:  1.136e-04  alpha:  4.477e-02  linmin:  5.281e-05  cgtest: -7.028e-04  t[s]:     14.64
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.343076e-01.
+	FillingsUpdate:  mu: +0.748543497  nElectrons: 118.000000
+LCAOMinimize: Iter:   9  F: -815.3031483167350189  |grad|_K:  7.449e-05  alpha:  2.925e-01  linmin: -5.103e-04  cgtest:  8.227e-03  t[s]:     15.75
+	FillingsUpdate:  mu: +0.748697730  nElectrons: 118.000000
+LCAOMinimize: Iter:  10  F: -815.3031883691699022  |grad|_K:  6.516e-05  alpha:  6.845e-02  linmin: -1.023e-04  cgtest: -4.411e-03  t[s]:     16.52
+	FillingsUpdate:  mu: +0.749821557  nElectrons: 118.000000
+LCAOMinimize: Iter:  11  F: -815.3032473636991426  |grad|_K:  1.593e-05  alpha:  1.323e-01  linmin:  6.973e-05  cgtest:  1.040e-02  t[s]:     17.34
+	FillingsUpdate:  mu: +0.750057303  nElectrons: 118.000000
+LCAOMinimize: Iter:  12  F: -815.3032507415474583  |grad|_K:  2.024e-05  alpha:  1.268e-01  linmin:  2.961e-06  cgtest:  8.656e-05  t[s]:     18.21
+	FillingsUpdate:  mu: +0.750367783  nElectrons: 118.000000
+LCAOMinimize: Iter:  13  F: -815.3032541558281991  |grad|_K:  6.914e-06  alpha:  7.941e-02  linmin: -4.078e-06  cgtest:  8.134e-04  t[s]:     19.00
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 2.382155e-01.
+	FillingsUpdate:  mu: +0.750336249  nElectrons: 118.000000
+LCAOMinimize: Iter:  14  F: -815.3032556973724922  |grad|_K:  8.061e-06  alpha:  3.071e-01  linmin:  6.771e-06  cgtest: -5.444e-06  t[s]:     20.09
+	FillingsUpdate:  mu: +0.750318931  nElectrons: 118.000000
+LCAOMinimize: Iter:  15  F: -815.3032559934176788  |grad|_K:  2.707e-06  alpha:  4.340e-02  linmin:  5.186e-05  cgtest: -4.035e-05  t[s]:     20.86
+LCAOMinimize: 	Predicted alpha/alphaT>3.000000, increasing alphaT to 1.302068e-01.
+	FillingsUpdate:  mu: +0.750227034  nElectrons: 118.000000
+LCAOMinimize: Iter:  16  F: -815.3032561763528747  |grad|_K:  1.536e-06  alpha:  2.378e-01  linmin:  1.922e-05  cgtest:  3.579e-04  t[s]:     21.91
+LCAOMinimize: Converged (|Delta F|<1.000000e-06 for 2 iters).
+
+
+---- Citations for features of the code used in this run ----
+
+   Software package:
+      R. Sundararaman, K. Letchworth-Weaver, K.A. Schwarz, D. Gunceler, Y. Ozhabes and T.A. Arias, 'JDFTx: software for joint density-functional theory', SoftwareX 6, 278 (2017)
+
+   gga-PBEsol exchange-correlation functional:
+      J.P. Perdew et al., Phys. Rev. Lett. 100, 136406 (2008)
+
+   Pseudopotentials:
+      KF Garrity, JW Bennett, KM Rabe and D Vanderbilt, Comput. Mater. Sci. 81, 446 (2014)
+
+   Linear-tetrahedron sampling for density of states:
+      G. Lehmann and M. Taut, Phys. status solidi (b) 54, 469 (1972)
+
+This list may not be complete. Please suggest additional citations or
+report any other bugs at https://github.com/shankar1729/jdftx/issues
+
+Initialization completed successfully at t[s]:     22.05
+
+
+-------- Electronic minimization -----------
+Will mix electronic density at each iteration.
+	FillingsUpdate:  mu: +0.750227034  nElectrons: 118.000000
+	FillingsUpdate:  mu: +0.745899240  nElectrons: 118.000000
+SCF: Cycle:  0   F: -815.373912457105234   dF: -7.066e-02   |Residual|: 2.451e-01   |deigs|: 7.609e-02  t[s]:     23.21
+	FillingsUpdate:  mu: +0.712547102  nElectrons: 118.000000
+SCF: Cycle:  1   F: -815.403252031215857   dF: -2.934e-02   |Residual|: 1.762e-01   |deigs|: 2.851e-02  t[s]:     23.91
+	FillingsUpdate:  mu: +0.726777243  nElectrons: 118.000000
+SCF: Cycle:  2   F: -815.422388917866556   dF: -1.914e-02   |Residual|: 8.939e-02   |deigs|: 1.257e-02  t[s]:     24.44
+	FillingsUpdate:  mu: +0.726808317  nElectrons: 118.000000
+SCF: Cycle:  3   F: -815.420605740685573   dF: +1.783e-03   |Residual|: 9.279e-02   |deigs|: 7.705e-04  t[s]:     25.02
+	FillingsUpdate:  mu: +0.726077294  nElectrons: 118.000000
+SCF: Cycle:  4   F: -815.443300831492138   dF: -2.270e-02   |Residual|: 5.882e-03   |deigs|: 1.320e-03  t[s]:     25.52
+	FillingsUpdate:  mu: +0.726098309  nElectrons: 118.000000
+SCF: Cycle:  5   F: -815.443302384740264   dF: -1.553e-06   |Residual|: 1.492e-03   |deigs|: 1.147e-04  t[s]:     26.02
+	FillingsUpdate:  mu: +0.726120363  nElectrons: 118.000000
+SCF: Cycle:  6   F: -815.443305652151366   dF: -3.267e-06   |Residual|: 3.208e-04   |deigs|: 2.780e-05  t[s]:     26.59
+	FillingsUpdate:  mu: +0.726119639  nElectrons: 118.000000
+SCF: Cycle:  7   F: -815.443305503122701   dF: +1.490e-07   |Residual|: 3.076e-04   |deigs|: 4.209e-06  t[s]:     27.10
+	FillingsUpdate:  mu: +0.726118662  nElectrons: 118.000000
+SCF: Cycle:  8   F: -815.443305748647845   dF: -2.455e-07   |Residual|: 5.348e-05   |deigs|: 2.555e-06  t[s]:     27.61
+	FillingsUpdate:  mu: +0.726119084  nElectrons: 118.000000
+SCF: Cycle:  9   F: -815.443305754923472   dF: -6.276e-09   |Residual|: 1.650e-05   |deigs|: 1.762e-06  t[s]:     28.18
+	FillingsUpdate:  mu: +0.726118780  nElectrons: 118.000000
+SCF: Cycle: 10   F: -815.443305755326719   dF: -4.032e-10   |Residual|: 1.007e-05   |deigs|: 9.626e-07  t[s]:     28.72
+SCF: Converged (|Delta E|<1.000000e-08 for 2 iters).
+
+Setting wave functions to eigenvectors of Hamiltonian
+Converging empty states (this may take a while): |deigs|: 1.778e-04
+
+# Ionic positions in lattice coordinates:
+ion Ge   0.666188153467864   0.332376295685729   0.750000000000000 0
+ion Ge   0.333811861532136   0.667623711814272   0.250000000000000 0
+ion Mn   0.163167248408767   0.326334485567535   0.750000000000000 0
+ion Mn   0.836832766591233   0.673665521932465   0.250000000000000 0
+ion Mn   0.672399867871757   0.835648842386969   0.750000000000000 0
+ion Mn   0.327600147128243   0.164351165113032   0.250000000000000 0
+ion Mn   0.163248985765211   0.835648842386969   0.750000000000000 0
+ion Mn   0.836751029234789   0.164351165113032   0.250000000000000 0
+
+# Forces in Lattice coordinates:
+force Ge   0.000000000000000   0.007059804287053   0.000000000000000 0
+force Ge  -0.000000000000000  -0.007059804287053   0.000000000000000 0
+force Mn  -0.000000000000000   0.034405953816124   0.000000000000000 0
+force Mn   0.000000000000000  -0.034405953816124   0.000000000000000 0
+force Mn  -0.026477692430220   0.000426853254365   0.000000000000000 0
+force Mn   0.026477692430224  -0.000426853254365   0.000000000000000 0
+force Mn   0.026477692430217  -0.026050839175858   0.000000000000000 0
+force Mn  -0.026477692430220   0.026050839175854  -0.000000000000000 0
+
+# Energy components:
+   Eewald =     -595.9654504519160128
+       EH =      206.7043003477733976
+     Eloc =     -599.2002071688721117
+      Enl =      134.8245356158668642
+      Exc =     -136.8058252806964390
+ Exc_core =       30.9921660126185508
+       KE =      144.0083017931194149
+-------------------------------------
+     Etot =     -815.4421791321065029
+       TS =        0.0011266232201918
+-------------------------------------
+        F =     -815.4433057553267190
+
+IonicMinimize: Iter:   0  F: -815.443305755326719  |grad|_K:  0.000e+00  t[s]:     29.23
+IonicMinimize: Converged (|grad|_K<1.000000e-04).
+
+#--- Lowdin population analysis ---
+# oxidation-state Ge +0.929 +0.929
+# oxidation-state Mn -0.284 -0.284 -0.284 -0.284 -0.284 -0.284
+
+
+Dumping 'totalE.fillings' ... done
+Dumping 'totalE.wfns' ... done
+Dumping 'totalE.n' ... done
+Dumping 'totalE.eigenvals' ... done
+Dumping 'totalE.eigStats' ... 
+	eMin: -2.178020 at state 0 ( [ +0.000000 +0.000000 +0.000000 ] spin 0 )
+	HOMO: +0.726064 at state 17 ( [ +0.500000 +0.000000 +0.500000 ] spin 0 )
+	mu  : +0.726119
+	LUMO: +0.726255 at state 4 ( [ +0.000000 +0.250000 +0.250000 ] spin 0 )
+	eMax: +1.572161 at state 9 ( [ +0.250000 +0.000000 +0.000000 ] spin 0 )
+	HOMO-LUMO gap: +0.000191
+	Optical gap  : +0.002106 at state 6 ( [ +0.000000 +0.500000 +0.000000 ] spin 0 )
+Dumping 'totalE.sym' ... done
+Dumping 'totalE.kPts' ... done
+Dumping 'totalE.kMap' ... done
+Dumping 'totalE.dos' ... done.
+End date and time: Thu Feb 15 14:59:33 2024  (Duration: 0-0:00:29.98)
+Done!
+
+PROFILER:             augmentDensityGrid     0.004949 +/-     0.002751 s,   98 calls,      0.484989 s total
+PROFILER:         augmentDensityGridGrad     0.021029 +/-     0.012284 s,   62 calls,      1.303803 s total
+PROFILER:              EdensityAndVscloc     0.016658 +/-     0.014114 s,   60 calls,      0.999463 s total
+PROFILER:            ExCorrCommunication     0.005956 +/-     0.012901 s,  190 calls,      1.131557 s total
+PROFILER:               ExCorrFunctional     0.000055 +/-     0.000177 s,   64 calls,      0.003545 s total
+PROFILER:                    ExCorrTotal     0.017948 +/-     0.019930 s,   64 calls,      1.148675 s total
+PROFILER:                    inv(matrix)     0.002125 +/-     0.006243 s,   10 calls,      0.021248 s total
+PROFILER:                    matrix::set     0.000020 +/-     0.000077 s,   59 calls,      0.001201 s total
+PROFILER:     RadialFunctionR::transform     0.010460 +/-     0.032626 s,  102 calls,      1.066901 s total
+PROFILER:                    reduceKmesh     0.001267 +/-     0.000000 s,    1 calls,      0.001267 s total
+PROFILER:               WavefunctionDrag     0.017310 +/-     0.000000 s,    1 calls,      0.017310 s total
+
+MEMUSAGE:             complexScalarField     0.009270 GB
+MEMUSAGE:        complexScalarFieldTilde     0.004635 GB
+MEMUSAGE:                    IndexArrays     0.004091 GB
+MEMUSAGE:                         matrix     0.007669 GB
+MEMUSAGE:                           misc     0.005042 GB
+MEMUSAGE:                     RealKernel     0.002395 GB
+MEMUSAGE:                    ScalarField     0.071840 GB
+MEMUSAGE:               ScalarFieldTilde     0.021552 GB
+MEMUSAGE:                          Total     0.097085 GB
+
+*************** JDFTx 1.7.0 (git hash 9bf41db5) ***************
+
+Start date and time: Tue Feb 20 11:37:00 2024
+Executable /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/wannier_gpu with command-line: -i totalE.in -o totalE.out
+Running on hosts (process indices):  nid001332 (0-1)  nid001333 (2-3)  nid001456 (4-5)  nid001944 (6-7)  nid002097 (8-9)  nid002213 (10-11)  nid002609 (12-13)  nid002612 (14-15)
+Divided in process groups (process indices):  0 (0)  1 (1)  2 (2)  3 (3)  4 (4)  5 (5)  6 (6)  7 (7)  8 (8)  9 (9)  10 (10)  11 (11)  12 (12)  13 (13)  14 (14)  15 (15)
+gpuInit: Found compatible cuda device 0 'NVIDIA A100-SXM4-40GB'
+gpuInit: Found compatible cuda device 1 'NVIDIA A100-SXM4-40GB'
+gpuInit: Selected device 0
+Resource initialization completed at t[s]:      0.31
+Run totals: 16 processes, 512 threads, 16 GPUs
+Memory pool size: 8192 MB (per process)
+
+
+Input parsed successfully to the following command list (including defaults):
+
+basis kpoint-dependent
+converge-empty-states yes
+coords-type Lattice
+core-overlap-check vector
+coulomb-interaction Periodic
+davidson-band-ratio 1.1
+density-of-states Etol 1.000000e-06 Esigma 0.000000e+00 \
+		Complete \
+	Total
+dump End State ElecDensity BandEigs EigStats DOS Symmetries Kpoints
+dump 
+dump-name totalE.$VAR
+elec-cutoff 45 275
+elec-eigen-algo Davidson
+elec-ex-corr gga-PBEsol
+elec-n-bands 100
+elec-smearing Fermi 0.00095
+electronic-minimize  \
+	dirUpdateScheme      FletcherReeves \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+electronic-scf  \
+	nIterations	50 \
+	energyDiffThreshold	1e-08 \
+	residualThreshold	1e-07 \
+	mixFraction	0.5 \
+	qMetric	0.8 \
+	history	10 \
+	nEigSteps	2 \
+	eigDiffThreshold	1e-08 \
+	mixedVariable	Density \
+	qKerker	0.8 \
+	qKappa	-1 \
+	verbose	no \
+	mixFractionMag	1.5
+exchange-regularization WignerSeitzTruncated
+fluid None
+fluid-ex-corr lda-TF lda-PZ
+fluid-gummel-loop 10 1.000000e-05
+fluid-minimize  \
+	dirUpdateScheme      PolakRibiere \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  0 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+fluid-solvent H2O 55.338 ScalarEOS \
+	epsBulk 78.4 \
+	pMol 0.92466 \
+	epsInf 1.77 \
+	Pvap 1.06736e-10 \
+	sigmaBulk 4.62e-05 \
+	Rvdw 2.61727 \
+	Res 1.42 \
+	tauNuc 343133 \
+	poleEl 15 7 1
+forces-output-coords Positions
+ion Ge   0.666188153467864   0.332376295685728   0.750000000000000 0
+ion Ge   0.333811861532136   0.667623711814271   0.250000000000000 0
+ion Mn   0.163167248408767   0.326334485567535   0.750000000000000 0
+ion Mn   0.836832766591233   0.673665521932465   0.250000000000000 0
+ion Mn   0.672399867871757   0.835648842386969   0.750000000000000 0
+ion Mn   0.327600147128243   0.164351165113032   0.250000000000000 0
+ion Mn   0.163248985765211   0.835648842386969   0.750000000000000 0
+ion Mn   0.836751029234789   0.164351165113032   0.250000000000000 0
+ion-species GBRV/$ID_pbesol.uspp
+ion-width 0
+ionic-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0.0001 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+kpoint   0.000000000000   0.000000000000   0.000000000000  1.00000000000000
+kpoint-folding 4 4 4 
+latt-move-scale 1 1 1
+latt-scale 1 1 1 
+lattice  \
+	   9.481164570535427   -4.740582285267713    0.000000000000000  \
+	   0.000000000000000    8.238772884283971    0.000000000000000  \
+	   0.000000000000000    0.000000000000000    7.676982525825886 
+lattice-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          0 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-06 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+lcao-params -1 1e-06 0.00095
+pcm-variant GLSSA13
+perturb-minimize  \
+	nIterations            0 \
+	algorithm              MINRES \
+	residualTol            0.0001 \
+	residualDiffThreshold  0.0001 \
+	CGBypass               no \
+	recomputeResidual      no
+spintype no-spin
+subspace-rotation-factor 1 yes
+symmetries automatic
+symmetry-threshold 0.0001
+wannier-minimize  \
+	dirUpdateScheme      L-BFGS \
+	linminMethod         DirUpdateRecommended \
+	nIterations          100 \
+	history              15 \
+	knormThreshold       0 \
+	maxThreshold         no \
+	energyDiffThreshold  1e-08 \
+	nEnergyDiff          2 \
+	alphaTstart          1 \
+	alphaTmin            1e-10 \
+	updateTestStepSize   yes \
+	alphaTreduceFactor   0.1 \
+	alphaTincreaseFactor 3 \
+	nAlphaAdjustMax      3 \
+	wolfeEnergy          0.0001 \
+	wolfeGradient        0.9 \
+	fdTest               no
+
+
+
+Stack trace:
+	 0: /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/libjdftx_gpu.so(_Z10printStackb+0x27) [0x14a5154fd1b7]
+	 1: /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/libjdftx_gpu.so(_Z14stackTraceExiti+0xd) [0x14a5154fd60d]
+	 2: /lib64/libc.so.6(+0x4adc0) [0x14a4d5651dc0]
+	 3: /lib64/libc.so.6(gsignal+0x10d) [0x14a4d5651d2b]
+	 4: /lib64/libc.so.6(abort+0x177) [0x14a4d56533e5]
+	 5: /usr/lib64/libstdc++.so.6(+0xa5735) [0x14a4d60a5735]
+	 6: /usr/lib64/libstdc++.so.6(+0xb0dbc) [0x14a4d60b0dbc]
+	 7: /usr/lib64/libstdc++.so.6(+0xb0e27) [0x14a4d60b0e27]
+	 8: /usr/lib64/libstdc++.so.6(+0xb1088) [0x14a4d60b1088]
+	 9: /usr/lib64/libstdc++.so.6(+0xa8073) [0x14a4d60a8073]
+	10: /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/wannier_gpu() [0x42b176]
+	11: /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/wannier_gpu() [0x417495]
+	12: /lib64/libc.so.6(__libc_start_main+0xef) [0x14a4d563c24d]
+	13: /global/cfs/cdirs/m4609/shammami/bin/jdftx-mpi/build/wannier_gpu() [0x417a1a]
+Writing 'jdftx-stacktrace' (for use with script printStackTrace): done.

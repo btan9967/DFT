@@ -1,0 +1,7 @@
+include common.in
+include bandstruct.kpoints
+elec-n-bands 100
+elec-smearing Fermi 0.00095 
+fix-electron-density totalE/totalE.$VAR
+dump End BandEigs
+dump-name bandstruct.$VAR

@@ -1,0 +1,38 @@
+include totalE.in
+
+wannier \
+         innerWindow 0.62557  0.7667 \
+         outerWindow 0.60207  0.78175 \
+         saveMomenta yes
+
+#input file generated from wanGen.py
+# 22 centers included
+
+wannier-center Mn 1 dyz
+wannier-center Mn 1 dxz
+wannier-center Mn 1 dx2-y2
+wannier-center Mn 2 dyz
+wannier-center Mn 2 dxz
+wannier-center Mn 2 dz2
+wannier-center Mn 2 dx2-y2
+wannier-center Mn 3 dxy
+wannier-center Mn 3 dyz
+wannier-center Mn 3 dxz
+wannier-center Mn 3 dx2-y2
+wannier-center Mn 4 dxy
+wannier-center Mn 4 dyz
+wannier-center Mn 4 dxz
+wannier-center Mn 4 dz2
+wannier-center Mn 5 dyz
+wannier-center Mn 5 dxz
+wannier-center Mn 5 dx2-y2
+wannier-center Mn 6 dyz
+wannier-center Mn 6 dz2
+wannier-center Mn 6 dxz
+wannier-center Mn 6 dx2-y2
+
+
+wannier-initial-state totalE.$VAR
+wannier-dump-name wannier.$VAR
+wannier-minimize nIterations 300
+
